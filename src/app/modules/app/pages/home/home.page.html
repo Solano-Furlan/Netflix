@@ -1,0 +1,113 @@
+<div
+  class="relative h-screen overflow-hidden w-full pointer-events-none bg-white"
+>
+  <iframe
+    class="absolute z-10 top-0 w-full h-screen object-cover scale-[1.35]"
+    src="https://www.youtube.com/embed/8g18jFHCLXk? &autohide=1&autoplay=1&mute=1&loop=1&fs=1&playlist=8g18jFHCLXk"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+  <div
+    class="
+      absolute
+      z-30
+      top-0
+      bg-[#0000000e]
+      h-screen
+      flex flex-col
+      justify-end
+      items-start
+      w-full
+    "
+  >
+    <img src="assets/images/dune-logo.png" class="ml-[60px] h-[130px]" />
+    <h3
+      class="
+        pl-[60px]
+        w-[650px]
+        pb-[5px]
+        pt-[10px]
+        text-[21px] text-white
+        font-medium
+      "
+    >
+      Feature adaptation of Frank Herbert's science fiction novel, about the son
+      of a noble family entrusted with the protection of the most valuable asset
+      and most vital element in the galaxy.
+    </h3>
+    <div class="pl-[60px] flex gap-[12px] mt-[30px]">
+      <button
+        class="
+          h-[46px]
+          pointer-events-auto
+          hover:bg-gray-200
+          w-[150px]
+          text-[18px]
+          font-medium
+          bg-white
+          rounded
+        "
+      >
+        <div class="flex items-center justify-center">
+          <fa-icon [icon]="faPlay" class="mr-[12px]"></fa-icon>
+          <span>Watch</span>
+        </div>
+      </button>
+      <button
+        class="
+          h-[46px]
+          pointer-events-auto
+          hover:bg-gray-400/40
+          w-[250px]
+          text-[18px]
+          font-medium
+          bg-gray-400/60
+          rounded
+          text-white
+        "
+      >
+        <div class="flex justify-center">
+          <hero-icon
+            name="information-circle"
+            class="h-[28px] mr-[5px]"
+          ></hero-icon>
+          <span>More Information</span>
+        </div>
+      </button>
+    </div>
+    <div
+      class="
+        h-[95px]
+        w-full
+        bg-gradient-to-b
+        from-transparent
+        to-primary-black
+        mt-[145px]
+      "
+    ></div>
+  </div>
+</div>
+<div class="bg-primary-black w-full">
+  <div
+    class="
+      -mt-36
+      flex
+      w-full
+      flex-col
+      gap-[50px]
+      pl-[60px]
+      pt-[8px]
+      relative
+      z-40
+    "
+  >
+    <app-topic-list title="Popular on Netflix"></app-topic-list>
+    <app-topic-list title="Adventure"></app-topic-list>
+    <app-topic-list title="Family"></app-topic-list>
+    <app-topic-list title="Comedy"></app-topic-list>
+    <app-topic-list title="Drama"></app-topic-list>
+    <app-topic-list title="Super Heroes"></app-topic-list>
+    <app-topic-list title="Criminal"></app-topic-list>
+    <app-topic-list title="Romance"></app-topic-list>
+  </div>
+</div>

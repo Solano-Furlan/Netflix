@@ -1,0 +1,104 @@
+<div>
+  <h2 class="text-white font-semibold text-[22px]">{{ title }}</h2>
+  <div class="flex gap-[4px] pt-[10px] overflow-x-visible w-full">
+    <button
+      *ngFor="let item of [].constructor(6)"
+      class="
+        hover:scale-[1.4] hover:-mt-16
+        h-[130px]
+        hover:drop-shadow-2xl
+        transition
+        duration-700
+        group
+        hover:z-40
+      "
+    >
+      <div
+        class="
+          h-[130px]
+          w-[230px]
+          overflow-hidden
+          rounded-[4px]
+          bg-gray-500
+          group-hover:rounded-b-none
+        "
+      >
+        <img
+          src="/assets/images/dune-poster.jpg"
+          class="object-cover h-[130px] w-[230px]"
+        />
+      </div>
+      <div
+        class="
+          absolute
+          w-full
+          h-0
+          overflow-hidden
+          bg-primary-sable
+          group-hover:h-[100px]
+          ease-out
+          duration-[1ms]
+          group-hover:block
+          rounded-b-[4px]
+          hidden
+          pt-[15px]
+          pb-[18px]
+          px-[10px]
+        "
+      >
+        <div class="flex justify-between">
+          <div class="flex gap-[5px]">
+            <button class="circle-button bg-white white-border">
+              <fa-icon
+                [icon]="faPlay"
+                class="text-primary-black text-[10px] ml-[1px]"
+              ></fa-icon>
+            </button>
+            <button class="circle-button bg-primary-ebony">
+              <hero-icon name="plus" class="h-[19px]"></hero-icon></button
+            ><button class="circle-button bg-primary-ebony">
+              <hero-icon name="thumb-up" class="h-[14px]"></hero-icon></button
+            ><button class="circle-button bg-primary-ebony">
+              <hero-icon name="thumb-down" class="h-[14px]"></hero-icon>
+            </button>
+          </div>
+          <button class="circle-button bg-primary-ebony">
+            <hero-icon name="chevron-down" class="h-[14px]"></hero-icon>
+          </button>
+        </div>
+        <div class="flex items-center pt-[20px]">
+          <div
+            class="
+              h-[23px]
+              w-[23px]
+              bg-red-600
+              text-white text-[13px]
+              font-bold
+              flex
+              rounded-sm
+              items-center
+              justify-center
+            "
+          >
+            <span>16</span>
+          </div>
+          <span class="text-white text-[12px] pl-[8px] pr-[8px]">1h 45min</span>
+          <div
+            class="
+              h-[10px]
+              flex
+              items-center
+              justify-center
+              px-[4px]
+              border-[1px]
+              rounded-sm
+              border-[#c8c8c8]
+            "
+          >
+            <span class="text-white text-[8px]">HD</span>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+</div>

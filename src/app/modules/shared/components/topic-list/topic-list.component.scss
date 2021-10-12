@@ -1,0 +1,7 @@
+.circle-button {
+  @apply rounded-full h-[30px] w-[30px] border-[1px] border-primary-silver hover:border-white text-white flex justify-center items-center;
+}
+
+.white-border {
+  border: white !important;
+}
