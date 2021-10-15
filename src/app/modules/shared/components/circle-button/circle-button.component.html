@@ -1,0 +1,48 @@
+<div
+  class="
+    relative
+    z-50
+    overflow-visible
+    h-[30px]
+    w-[30px]
+    tooltip
+    flex-col
+    items-center
+  "
+>
+  <div
+    class="
+    {{ fill ? 'hidden' : 'tooltiptext' }}
+      flex-col
+      items-center
+      absolute
+      z-50
+      top-0
+      -mt-10
+      w-[140px]
+    "
+  >
+    <div
+      class="
+        bg-[#e6e6e6]
+        flex
+        items-center
+        justify-center
+        rounded
+        px-[12px]
+        h-[26px]
+      "
+    >
+      <span class="text-red text-[13px] text-primary-ebony font-medium">{{
+        toolip_text
+      }}</span>
+    </div>
+    <div class="arrow-down"></div>
+  </div>
+  <button
+    (click)="onClickFunction()"
+    class="{{ fill ? 'circle-button-hover' : 'circle-button' }} absolute top-0"
+  >
+    <ng-content></ng-content>
+  </button>
+</div>

@@ -1,0 +1,38 @@
+.circle-button {
+  @apply rounded-full h-[30px] w-[30px] border-[1px] bg-primary-ebony border-primary-silver hover:border-white text-white flex justify-center items-center;
+}
+
+.circle-button-hover {
+  @apply rounded-full h-[30px] w-[30px] border-[1px] bg-white hover:bg-[#e6e6e6] border-white hover:border-[#e6e6e6] text-white flex justify-center items-center;
+}
+.white-border {
+  border: white !important;
+  background-color: white !important;
+}
+
+.white-boder:hover {
+  border: #e6e6e6;
+  background-color: green;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  margin-top: -1px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+
+  border-top: 8px solid #e6e6e6;
+}
+
+.tooltip {
+  display: flex;
+}
+
+.tooltip .tooltiptext {
+  display: none;
+}
+
+.tooltip:hover .tooltiptext {
+  display: flex;
+}

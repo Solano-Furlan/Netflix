@@ -1,9 +1,11 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faSearch,
   faBell,
   faCaretDown,
 } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-header',
@@ -15,9 +17,18 @@ export class HeaderComponent implements OnInit {
   faCaretDown = faCaretDown;
   faBell = faBell;
   top = true;
-  constructor() {}
+  routerUrl: string = this.router.url;
+  sub?: Subscription;
 
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.sub = this.router.events.subscribe((e) => {
+      if ('url' in e) {
+        this.routerUrl = e.url;
+      }
+    });
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {

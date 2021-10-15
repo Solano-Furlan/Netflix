@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,7 +10,11 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 export class TopicListComponent implements OnInit {
   faPlay = faPlay;
   @Input() title!: string;
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  play() {
+    this.router.navigate(['/player']);
+  }
 }

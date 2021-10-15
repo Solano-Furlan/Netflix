@@ -1,6 +1,6 @@
 <div>
   <h2 class="text-white font-semibold text-[22px]">{{ title }}</h2>
-  <div class="flex gap-[4px] pt-[10px] overflow-x-visible w-full">
+  <div class="flex gap-[4px] pt-[10px] w-full">
     <button
       *ngFor="let item of [].constructor(6)"
       class="
@@ -13,19 +13,16 @@
         hover:z-40
       "
     >
-      <div
-        class="
-          h-[130px]
-          w-[230px]
-          overflow-hidden
-          rounded-[4px]
-          bg-gray-500
-          group-hover:rounded-b-none
-        "
-      >
+      <div class="h-[130px] w-[230px] rounded-[4px] bg-gray-500">
         <img
           src="/assets/images/dune-poster.jpg"
-          class="object-cover h-[130px] w-[230px]"
+          class="
+            object-cover
+            h-[130px]
+            w-[230px]
+            rounded-[4px]
+            group-hover:rounded-b-none
+          "
         />
       </div>
       <div
@@ -33,7 +30,6 @@
           absolute
           w-full
           h-0
-          overflow-hidden
           bg-primary-sable
           group-hover:h-[100px]
           ease-out
@@ -48,23 +44,27 @@
       >
         <div class="flex justify-between">
           <div class="flex gap-[5px]">
-            <button class="circle-button bg-white white-border">
+            <app-circle-button (click)="play()" [fill]="true">
               <fa-icon
                 [icon]="faPlay"
                 class="text-primary-black text-[10px] ml-[1px]"
               ></fa-icon>
-            </button>
-            <button class="circle-button bg-primary-ebony">
-              <hero-icon name="plus" class="h-[19px]"></hero-icon></button
-            ><button class="circle-button bg-primary-ebony">
-              <hero-icon name="thumb-up" class="h-[14px]"></hero-icon></button
-            ><button class="circle-button bg-primary-ebony">
+            </app-circle-button>
+            <app-circle-button toolip_text="Add to My List">
+              <hero-icon name="plus" class="h-[19px]"></hero-icon>
+            </app-circle-button>
+            <app-circle-button toolip_text="I like this">
+              <hero-icon
+                name="thumb-up"
+                class="h-[14px]"
+              ></hero-icon></app-circle-button
+            ><app-circle-button toolip_text="Not for me">
               <hero-icon name="thumb-down" class="h-[14px]"></hero-icon>
-            </button>
+            </app-circle-button>
           </div>
-          <button class="circle-button bg-primary-ebony">
+          <app-circle-button toolip_text="Episodes & info">
             <hero-icon name="chevron-down" class="h-[14px]"></hero-icon>
-          </button>
+          </app-circle-button>
         </div>
         <div class="flex items-center pt-[20px]">
           <div

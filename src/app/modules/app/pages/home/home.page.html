@@ -36,23 +36,25 @@
       and most vital element in the galaxy.
     </h3>
     <div class="pl-[60px] flex gap-[12px] mt-[30px]">
-      <button
-        class="
-          h-[46px]
-          pointer-events-auto
-          hover:bg-gray-200
-          w-[150px]
-          text-[18px]
-          font-medium
-          bg-white
-          rounded
-        "
-      >
-        <div class="flex items-center justify-center">
-          <fa-icon [icon]="faPlay" class="mr-[12px]"></fa-icon>
-          <span>Watch</span>
-        </div>
-      </button>
+      <a routerLink="/player">
+        <button
+          class="
+            h-[46px]
+            pointer-events-auto
+            hover:bg-gray-200
+            w-[150px]
+            text-[18px]
+            font-medium
+            bg-white
+            rounded
+          "
+        >
+          <div class="flex items-center justify-center">
+            <fa-icon [icon]="faPlay" class="mr-[12px]"></fa-icon>
+            <span>Watch</span>
+          </div>
+        </button>
+      </a>
       <button
         class="
           h-[46px]

@@ -7,6 +7,7 @@ import {
   bell,
   thumbUp,
   thumbDown,
+  arrowLeft,
   plus,
   chevronDown,
 } from 'ng-heroicon';
@@ -18,6 +19,8 @@ import { HomePage } from './modules/app/pages/home/home.page';
 import { HeaderComponent } from './modules/shared/components/header/header.component';
 import { FooterComponent } from './modules/shared/components/footer/footer.component';
 import { TopicListComponent } from './modules/shared/components/topic-list/topic-list.component';
+import { PlayerPage } from './modules/app/pages/player/player.page';
+import { CircleButtonComponent } from './modules/shared/components/circle-button/circle-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,8 @@ import { TopicListComponent } from './modules/shared/components/topic-list/topic
     HeaderComponent,
     FooterComponent,
     TopicListComponent,
+    PlayerPage,
+    CircleButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,7 @@ import { TopicListComponent } from './modules/shared/components/topic-list/topic
       search,
       bell,
       thumbUp,
+      arrowLeft,
       thumbDown,
       plus,
       chevronDown,

@@ -1,4 +1,39 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
+
+html * {
+  font-family: SansCustom !important;
+}
+
+// Fonts
+@font-face {
+  font-family: "SansCustom";
+  font-weight: 300;
+  src: url("/assets/fonts/NetflixSansLight.ttf");
+}
+
+@font-face {
+  font-family: "SansCustom";
+  font-weight: 400;
+  src: url("/assets/fonts/NetflixSansRegular.ttf");
+}
+
+@font-face {
+  font-family: "SansCustom";
+  font-weight: 500;
+  src: url("/assets/fonts/NetflixSansMedium.ttf");
+}
+
+@font-face {
+  font-family: "NetflixSansCustom";
+  font-weight: 600;
+  src: url("/assets/fonts/SansBlack.ttf");
+}
+
+@font-face {
+  font-family: "SansCustom";
+  font-weight: 700;
+  src: url("/assets/fonts/NetflixSansBold.ttf");
+}
