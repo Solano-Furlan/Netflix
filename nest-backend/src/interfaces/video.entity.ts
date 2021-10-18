@@ -1,3 +1,4 @@
+import { VideoGenre } from 'src/utils/enums/video-genre.enun';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -18,8 +19,11 @@ export class Video {
   image_url: string;
 
   @Column()
-  minutes: string;
+  minutes: number;
 
   @Column()
   rating: number;
+
+  @Column()
+  genre: VideoGenre;
 }

@@ -1,11 +1,46 @@
-import { Controller, Get } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
+import { Video } from 'src/interfaces/video.entity';
+import { CreateVideoDto } from './dto/cerate-video.dto';
+import { UpdateVideoDto } from './dto/update-video.dto';
+import { VideosService } from './videos.service';
 
 @Controller('videos')
 export class VideosController {
-  constructor() {}
+  constructor(private videosService: VideosService) {}
 
   @Get()
-  getVideos(): string {
-    return 'Videos';
+  async getVideos(): Promise<Video[]> {
+    return this.videosService.getVideos();
+  }
+
+  @Post()
+  createVideo(@Body() createVideoDto: CreateVideoDto): Promise<Video> {
+    return this.videosService.createTask(createVideoDto);
+  }
+
+  @Patch('/:id')
+  updateVideo(
+    @Param('id') id: string,
+    @Body() updateVideoDto: UpdateVideoDto,
+  ): Promise<Video> {
+    return this.videosService.updateVideo(id, updateVideoDto);
+  }
+
+  @Get('/:id')
+  getVideoById(@Param('id') id: string): Promise<Video> {
+    return this.videosService.getVideoById(id);
+  }
+
+  @Delete('/:id')
+  deleteVideo(@Param('id') id: string): Promise<void> {
+    return this.videosService.deleteVideo(id);
   }
 }

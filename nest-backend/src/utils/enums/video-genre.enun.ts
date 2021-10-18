@@ -1,0 +1,8 @@
+export enum VideoGenre {
+  ANIMATION = 'ANIMATION',
+  SCI_FI = 'SCI_FI',
+  DRAMA = 'DONE',
+  COMEDY = 'COMEDY',
+  WESTERN = 'WESTERN',
+  DOCUMENTARY = 'DOCUMENTARY',
+}
