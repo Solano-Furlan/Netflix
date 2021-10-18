@@ -21,6 +21,8 @@ import { FooterComponent } from './modules/shared/components/footer/footer.compo
 import { TopicListComponent } from './modules/shared/components/topic-list/topic-list.component';
 import { PlayerPage } from './modules/app/pages/player/player.page';
 import { CircleButtonComponent } from './modules/shared/components/circle-button/circle-button.component';
+import { VideosService } from './modules/backend/services/videos.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { CircleButtonComponent } from './modules/shared/components/circle-button
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FontAwesomeModule,
     HeroIconModule.withIcons({
       informationCircle,
@@ -47,7 +50,7 @@ import { CircleButtonComponent } from './modules/shared/components/circle-button
     }),
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [VideosService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

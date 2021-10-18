@@ -37,6 +37,5 @@ export class HeaderComponent implements OnInit {
     } else {
       this.top = false;
     }
-    console.log(window.pageYOffset);
   }
 }
