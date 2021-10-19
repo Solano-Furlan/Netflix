@@ -1,7 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Video } from 'src/interfaces/video.entity';
 import { CreateVideoDto } from './dto/cerate-video.dto';
+import { FilterVideosDto } from './dto/filter-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { VideoRepository } from './videos.repository';
 
@@ -12,8 +13,19 @@ export class VideosService {
     private videoRepository: VideoRepository,
   ) {}
 
-  async getVideos(): Promise<Video[]> {
+  async getVideos(filterDto: FilterVideosDto): Promise<Video[]> {
     const query = this.videoRepository.createQueryBuilder('video');
+
+    if (filterDto.genre) {
+      query.andWhere('video.genre = :genre', { genre: filterDto.genre });
+    }
+
+    if (filterDto.search) {
+      query.andWhere(
+        'LOWER(video.title) LIKE LOWER(:search) OR LOWER(video.description) LIKE LOWER(:search)',
+        { search: `%${filterDto.search}%` },
+      );
+    }
 
     const videos = await query.getMany();
     return videos;

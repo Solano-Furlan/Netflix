@@ -6,9 +6,11 @@ import {
   Param,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { Video } from 'src/interfaces/video.entity';
 import { CreateVideoDto } from './dto/cerate-video.dto';
+import { FilterVideosDto } from './dto/filter-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { VideosService } from './videos.service';
 
@@ -17,8 +19,8 @@ export class VideosController {
   constructor(private videosService: VideosService) {}
 
   @Get()
-  async getVideos(): Promise<Video[]> {
-    return this.videosService.getVideos();
+  async getVideos(@Query() filterDto: FilterVideosDto): Promise<Video[]> {
+    return this.videosService.getVideos(filterDto);
   }
 
   @Post()
