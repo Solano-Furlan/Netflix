@@ -41,7 +41,7 @@ export class TopicListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.videosService.getAllVideos().subscribe((videos) => {
+    this.videosService.getVideosByGenre(this.genre).subscribe((videos) => {
       this.videos = videos;
       console.log(videos);
     });

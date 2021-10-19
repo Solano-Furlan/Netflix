@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IVideo } from '../interfaces/video.interface';
 import { HttpClient } from '@angular/common/http';
+import { VideoGenre } from '../../shared/utils/enums/video-genre.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,11 @@ export class VideosService {
 
   getAllVideos(): Observable<IVideo[]> {
     return this.http.get<IVideo[]>(`${this.baseUrl}/${this.RESOURCE_NAME}`);
+  }
+
+  getVideosByGenre(genre: VideoGenre): Observable<IVideo[]> {
+    return this.http.get<IVideo[]>(
+      `${this.baseUrl}/${this.RESOURCE_NAME}?genre=${genre}`
+    );
   }
 }
