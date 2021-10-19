@@ -2,7 +2,7 @@
   <h2 class="text-white font-semibold text-[22px]">{{ title }}</h2>
   <div class="flex gap-[4px] pt-[10px] w-full">
     <button
-      *ngFor="let item of [].constructor(6)"
+      *ngFor="let video of videos"
       class="
         hover:scale-[1.4] hover:-mt-16
         h-[130px]
@@ -13,11 +13,14 @@
         hover:z-40
       "
     >
-      <div class="h-[130px] w-[230px] rounded-[4px] bg-gray-500">
+      <div
+        class="h-[130px] overflow-hidden w-[230px] rounded-[4px] bg-gray-500"
+      >
         <img
-          src="/assets/images/dune-poster.jpg"
+          src="{{ video.image_url }}"
           class="
             object-cover
+            scale-[1.02]
             h-[130px]
             w-[230px]
             rounded-[4px]
@@ -44,7 +47,7 @@
       >
         <div class="flex justify-between">
           <div class="flex gap-[5px]">
-            <app-circle-button (click)="play()" [fill]="true">
+            <app-circle-button (onClick)="play(video.video_url!)" [fill]="true">
               <fa-icon
                 [icon]="faPlay"
                 class="text-primary-black text-[10px] ml-[1px]"
@@ -71,7 +74,7 @@
             class="
               h-[23px]
               w-[23px]
-              bg-red-600
+              bg-green-600
               text-white text-[13px]
               font-bold
               flex
@@ -80,9 +83,11 @@
               justify-center
             "
           >
-            <span>16</span>
+            <span>L</span>
           </div>
-          <span class="text-white text-[12px] pl-[8px] pr-[8px]">1h 45min</span>
+          <span class="text-white text-[12px] pl-[8px] pr-[8px]"
+            >{{ video.minutes }}min</span
+          >
           <div
             class="
               h-[10px]

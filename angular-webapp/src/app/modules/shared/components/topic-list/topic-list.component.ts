@@ -5,6 +5,7 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { IVideo } from 'src/app/modules/backend/interfaces/video.interface';
 import { VideosService } from 'src/app/modules/backend/services/videos.service';
+import { VideoGenre } from '../../utils/enums/video-genre.enum';
 
 export interface HttpClientOptions {
   headers?:
@@ -31,6 +32,7 @@ export class TopicListComponent implements OnInit {
   videos!: IVideo[];
   faPlay = faPlay;
   options?: HttpClientOptions;
+  @Input() genre!: VideoGenre;
   @Input() title!: string;
   constructor(
     private http: HttpClient,
@@ -45,7 +47,7 @@ export class TopicListComponent implements OnInit {
     });
   }
 
-  play() {
-    this.router.navigate(['/player']);
+  play(id: string) {
+    this.router.navigate([`/player/${id}`]);
   }
 }

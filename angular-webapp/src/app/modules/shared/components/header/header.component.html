@@ -1,5 +1,5 @@
 <div
-  *ngIf="routerUrl != '/player'"
+  *ngIf="!routerUrl.includes('player')"
   (scroll)="onWindowScroll()"
   class="
   {{

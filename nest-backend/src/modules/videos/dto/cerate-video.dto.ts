@@ -16,7 +16,6 @@ export class CreateVideoDto {
   @IsNotEmpty()
   description: string;
 
-  @IsUrl()
   @IsNotEmpty()
   video_url: string;
 

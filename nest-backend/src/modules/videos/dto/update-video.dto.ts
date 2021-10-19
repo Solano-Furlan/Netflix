@@ -11,7 +11,6 @@ export class UpdateVideoDto {
   description: string;
 
   @IsOptional()
-  @IsUrl()
   video_url: string;
 
   @IsOptional()
