@@ -21,4 +21,10 @@ export class VideosService {
       `${this.baseUrl}/${this.RESOURCE_NAME}?genre=${genre}`
     );
   }
+
+  getVideosSearch(term: string): Observable<IVideo[]> {
+    return this.http.get<IVideo[]>(
+      `${this.baseUrl}/${this.RESOURCE_NAME}?search=${term}`
+    );
+  }
 }

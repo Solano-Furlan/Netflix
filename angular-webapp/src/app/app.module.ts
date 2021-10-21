@@ -8,6 +8,7 @@ import {
   thumbUp,
   thumbDown,
   arrowLeft,
+  x,
   plus,
   chevronDown,
 } from 'ng-heroicon';
@@ -23,6 +24,8 @@ import { PlayerPage } from './modules/app/pages/player/player.page';
 import { CircleButtonComponent } from './modules/shared/components/circle-button/circle-button.component';
 import { VideosService } from './modules/backend/services/videos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { SearchPage } from './modules/app/pages/search/search.page';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +35,13 @@ import { HttpClientModule } from '@angular/common/http';
     TopicListComponent,
     PlayerPage,
     CircleButtonComponent,
+    SearchPage,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     FontAwesomeModule,
     HeroIconModule.withIcons({
       informationCircle,
@@ -45,6 +50,7 @@ import { HttpClientModule } from '@angular/common/http';
       thumbUp,
       arrowLeft,
       thumbDown,
+      x,
       plus,
       chevronDown,
     }),

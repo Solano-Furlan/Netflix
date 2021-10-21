@@ -19,9 +19,9 @@
   "
 >
   <div class="flex gap-[20px] items-center -mt-1 -ml-1">
-    <div>
+    <a routerLink="">
       <img src="assets/images/logo.png" class="h-[27px] w-[100px] mr-[20px]" />
-    </div>
+    </a>
     <a routerLink="" class="header-item">Home</a>
     <a routerLink="" class="header-item">Tv Shows</a>
     <a routerLink="" class="header-item">Movies</a>
@@ -29,9 +29,49 @@
     <a routerLink="" class="header-item">Rewatch</a>
   </div>
   <div class="flex gap-[28px] items-center">
-    <button>
+    <button *ngIf="!search" (click)="openSearch()">
       <fa-icon [icon]="faSearch" class="text-white text-[20px]"></fa-icon>
     </button>
+    <div
+      *ngIf="search"
+      class="
+        flex
+        content-center
+        w-[270px]
+        -mr-1
+        pl-[8px]
+        pr-[3px]
+        h-[33px]
+        bg-black
+        border-white border-[1px]
+      "
+    >
+      <fa-icon
+        [icon]="faSearch"
+        class="text-white text-[20px] mt-[2px]"
+      ></fa-icon>
+      <input
+        type="text"
+        placeholder="Title, description"
+        #search_term
+        [(ngModel)]="searchInput"
+        (ngModelChange)="searchVideosByTerm()"
+        class="
+          bg-transparent
+          border-none
+          text-white
+          placeholder-gray-200 placeholder-opacity-40
+          text-[14px]
+          w-full
+          px-[10px]
+          focus:border-none focus:outline-none focus:ring-0
+        "
+      />
+      {{ search_term.focus() }}
+      <button (click)="closeSearch()">
+        <hero-icon name="x" class="text-white h-[26px]"></hero-icon>
+      </button>
+    </div>
     <button class="text-[16px] text-white">Kids</button>
     <button>
       <fa-icon [icon]="faBell" class="text-white text-[22px]"></fa-icon>

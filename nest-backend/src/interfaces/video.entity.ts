@@ -26,4 +26,10 @@ export class Video {
 
   @Column()
   genre: VideoGenre;
+
+  @Column({ nullable: true })
+  trailer_url: string;
+
+  @Column({ default: 5, nullable: true })
+  relevance: number;
 }
