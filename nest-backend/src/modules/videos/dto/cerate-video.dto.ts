@@ -2,6 +2,7 @@ import {
   IsEnum,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsUrl,
   MaxLength,
 } from 'class-validator';
@@ -31,4 +32,10 @@ export class CreateVideoDto {
   @IsNotEmpty()
   @IsEnum(VideoGenre)
   genre: VideoGenre;
+
+  @IsOptional()
+  trailer_url: string;
+
+  @IsOptional()
+  relevance: number;
 }

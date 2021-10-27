@@ -9,6 +9,9 @@ import {
   thumbDown,
   arrowLeft,
   x,
+  trash,
+  play,
+  externalLink,
   plus,
   chevronDown,
 } from 'ng-heroicon';
@@ -26,6 +29,8 @@ import { VideosService } from './modules/backend/services/videos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './modules/app/pages/search/search.page';
+import { VideosConfigPage } from './modules/admin/pages/videos-config/videos-config.page';
+import { VideoItemComponent } from './modules/admin/pages/videos-config/video-item/video-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +41,8 @@ import { SearchPage } from './modules/app/pages/search/search.page';
     PlayerPage,
     CircleButtonComponent,
     SearchPage,
+    VideosConfigPage,
+    VideoItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,10 @@ import { SearchPage } from './modules/app/pages/search/search.page';
       arrowLeft,
       thumbDown,
       x,
+      trash,
       plus,
+      externalLink,
+      play,
       chevronDown,
     }),
     FontAwesomeModule,

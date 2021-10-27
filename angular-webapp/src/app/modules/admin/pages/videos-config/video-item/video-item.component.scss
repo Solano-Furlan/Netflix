@@ -1,0 +1,11 @@
+input {
+  @apply bg-primary-ebony bg-opacity-5 pl-2 w-full py-2 shadow-sm rounded-md focus:border-primary-black;
+}
+
+label {
+  @apply pb-1 text-primary-sable text-[14px] block font-semibold;
+}
+
+textarea {
+  @apply bg-primary-ebony bg-opacity-5 pl-2 rounded-md py-1 focus:border-primary-black;
+}

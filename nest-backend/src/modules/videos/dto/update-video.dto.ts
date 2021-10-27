@@ -25,4 +25,10 @@ export class UpdateVideoDto {
   @IsOptional()
   @IsEnum(VideoGenre)
   genre: VideoGenre;
+
+  @IsOptional()
+  trailer_url: string;
+
+  @IsOptional()
+  relevance: number;
 }

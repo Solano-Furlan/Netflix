@@ -40,6 +40,8 @@ export class VideosService {
       minutes: createVideoDto.minutes,
       rating: createVideoDto.rating,
       genre: createVideoDto.genre,
+      relevance: createVideoDto.relevance,
+      trailer_url: createVideoDto.trailer_url,
     });
 
     await this.videoRepository.save(video);
@@ -59,6 +61,8 @@ export class VideosService {
       (video.minutes = updateVideoDto.minutes),
       (video.rating = updateVideoDto.rating),
       (video.genre = updateVideoDto.genre),
+      (video.relevance = updateVideoDto.relevance),
+      (video.trailer_url = updateVideoDto.trailer_url),
       await this.videoRepository.save(video);
     return video;
   }

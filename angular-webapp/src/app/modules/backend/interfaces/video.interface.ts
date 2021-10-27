@@ -9,4 +9,6 @@ export interface IVideo {
   minutes?: number;
   rating?: number;
   genre?: VideoGenre;
+  trailer_url?: string;
+  relevance?: number;
 }

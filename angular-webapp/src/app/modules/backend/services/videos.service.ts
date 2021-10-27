@@ -27,4 +27,11 @@ export class VideosService {
       `${this.baseUrl}/${this.RESOURCE_NAME}?search=${term}`
     );
   }
+
+  updateVideo(id: string, video: IVideo): Observable<IVideo> {
+    return this.http.patch<IVideo>(
+      `${this.baseUrl}/${this.RESOURCE_NAME}/${id}`,
+      video
+    );
+  }
 }
