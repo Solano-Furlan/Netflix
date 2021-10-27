@@ -29,8 +29,6 @@ import { VideosService } from './modules/backend/services/videos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './modules/app/pages/search/search.page';
-import { VideosConfigPage } from './modules/admin/pages/videos-config/videos-config.page';
-import { VideoItemComponent } from './modules/admin/pages/videos-config/video-item/video-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,8 +39,6 @@ import { VideoItemComponent } from './modules/admin/pages/videos-config/video-it
     PlayerPage,
     CircleButtonComponent,
     SearchPage,
-    VideosConfigPage,
-    VideoItemComponent,
   ],
   imports: [
     BrowserModule,

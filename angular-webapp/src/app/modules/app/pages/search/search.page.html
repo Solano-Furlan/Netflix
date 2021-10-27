@@ -1,23 +1,27 @@
-<div class="w-full min-h-screen bg-primary-black">
-  <div
-    class="
-      w-full
-      pt-[120px]
-      px-[50px]
-      grid grid-flow-row
-      gap-x-[4px] gap-y-[70px]
-      grid-cols-6
-    "
-  >
-    <button
-      (click)="play(video.video_url!)"
-      *ngFor="let video of videos"
-      class="h-[130px] w-full"
+<div class="w-full">
+  <app-header></app-header>
+  <div class="w-full min-h-screen bg-primary-black">
+    <div
+      class="
+        w-full
+        pt-[120px]
+        px-[50px]
+        grid grid-flow-row
+        gap-x-[4px] gap-y-[70px]
+        grid-cols-6
+      "
     >
-      <img
-        src="{{video.image_url}}"
-        class="h-[130px] w-full rounded object-cover"
-      />
-    </button>
+      <button
+        (click)="play(video.video_url!)"
+        *ngFor="let video of videos"
+        class="h-[130px] w-full"
+      >
+        <img
+          src="{{video.image_url}}"
+          class="h-[130px] w-full rounded object-cover"
+        />
+      </button>
+    </div>
   </div>
+  <app-footer></app-footer>
 </div>

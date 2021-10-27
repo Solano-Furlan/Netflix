@@ -1,111 +1,126 @@
-<div
-  class="relative h-screen overflow-hidden w-full pointer-events-none bg-black"
->
-  <iframe
-    class="absolute z-10 top-0 w-full h-screen object-cover scale-[1.35]"
-    src="https://streamable.com/e/1an9d9?autoplay=1"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
+<div class="w-full">
+  <app-header></app-header>
   <div
     class="
-      absolute
-      z-30
-      top-0
-      bg-[#0000000e]
+      relative
       h-screen
-      flex flex-col
-      justify-end
-      items-start
+      overflow-hidden
       w-full
+      pointer-events-none
+      bg-black
     "
   >
-    <h1 class="ml-[60px] text-[80px] font-light uppercase text-white">
-      Spring
-    </h1>
+    <iframe
+      class="absolute z-10 top-0 w-full h-screen object-cover scale-[1.35]"
+      src="https://streamable.com/e/1an9d9?autoplay=1"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <div
+      class="
+        absolute
+        z-30
+        top-0
+        bg-[#0000000e]
+        h-screen
+        flex flex-col
+        justify-end
+        items-start
+        w-full
+      "
     >
-    <h3 class="pl-[60px] -mt-5 w-[650px] pb-[5px] text-[21px] text-white">
-      Spring is the story of a shepherd girl and her dog, who face ancient
-      spirits in order to continue the cycle of life.
-    </h3>
-    <div class="pl-[60px] flex gap-[12px] mt-[30px]">
-      <a routerLink="/player/eyfsdn">
+      <h1 class="ml-[60px] text-[80px] font-light uppercase text-white">
+        Spring
+      </h1>
+      >
+      <h3 class="pl-[60px] -mt-5 w-[650px] pb-[5px] text-[21px] text-white">
+        Spring is the story of a shepherd girl and her dog, who face ancient
+        spirits in order to continue the cycle of life.
+      </h3>
+      <div class="pl-[60px] flex gap-[12px] mt-[30px]">
+        <a routerLink="/player/eyfsdn">
+          <button
+            class="
+              h-[46px]
+              pointer-events-auto
+              hover:bg-gray-200
+              w-[150px]
+              text-[18px]
+              font-medium
+              bg-white
+              rounded
+            "
+          >
+            <div class="flex items-center justify-center">
+              <fa-icon [icon]="faPlay" class="mr-[12px]"></fa-icon>
+              <span>Watch</span>
+            </div>
+          </button>
+        </a>
         <button
           class="
             h-[46px]
             pointer-events-auto
-            hover:bg-gray-200
-            w-[150px]
+            hover:bg-gray-400/40
+            w-[250px]
             text-[18px]
             font-medium
-            bg-white
+            bg-gray-400/60
             rounded
+            text-white
           "
         >
-          <div class="flex items-center justify-center">
-            <fa-icon [icon]="faPlay" class="mr-[12px]"></fa-icon>
-            <span>Watch</span>
+          <div class="flex justify-center">
+            <hero-icon
+              name="information-circle"
+              class="h-[28px] mr-[5px]"
+            ></hero-icon>
+            <span>More Information</span>
           </div>
         </button>
-      </a>
-      <button
+      </div>
+      <div
         class="
-          h-[46px]
-          pointer-events-auto
-          hover:bg-gray-400/40
-          w-[250px]
-          text-[18px]
-          font-medium
-          bg-gray-400/60
-          rounded
-          text-white
+          h-[95px]
+          w-full
+          bg-gradient-to-b
+          from-transparent
+          to-primary-black
+          mt-[145px]
         "
-      >
-        <div class="flex justify-center">
-          <hero-icon
-            name="information-circle"
-            class="h-[28px] mr-[5px]"
-          ></hero-icon>
-          <span>More Information</span>
-        </div>
-      </button>
+      ></div>
     </div>
+  </div>
+  <div class="bg-primary-black w-full">
     <div
       class="
-        h-[95px]
+        -mt-36
+        flex
         w-full
-        bg-gradient-to-b
-        from-transparent
-        to-primary-black
-        mt-[145px]
+        flex-col
+        gap-[50px]
+        pl-[60px]
+        pt-[8px]
+        relative
+        z-40
       "
-    ></div>
+    >
+      <app-topic-list
+        [genre]="VideoGenre.ANIMATION"
+        title="Animation"
+      ></app-topic-list>
+      <app-topic-list
+        [genre]="VideoGenre.COMEDY"
+        title="Comedy"
+      ></app-topic-list>
+      <app-topic-list title="Family"></app-topic-list>
+      <app-topic-list title="Comedy"></app-topic-list>
+      <app-topic-list title="Drama"></app-topic-list>
+      <app-topic-list title="Super Heroes"></app-topic-list>
+      <app-topic-list title="Criminal"></app-topic-list>
+      <app-topic-list title="Romance"></app-topic-list>
+    </div>
   </div>
-</div>
-<div class="bg-primary-black w-full">
-  <div
-    class="
-      -mt-36
-      flex
-      w-full
-      flex-col
-      gap-[50px]
-      pl-[60px]
-      pt-[8px]
-      relative
-      z-40
-    "
-  >
-    <app-topic-list
-      [genre]="VideoGenre.ANIMATION"
-      title="Animation"
-    ></app-topic-list>
-    <app-topic-list [genre]="VideoGenre.COMEDY" title="Comedy"></app-topic-list>
-    <app-topic-list title="Family"></app-topic-list>
-    <app-topic-list title="Comedy"></app-topic-list>
-    <app-topic-list title="Drama"></app-topic-list>
-    <app-topic-list title="Super Heroes"></app-topic-list>
-    <app-topic-list title="Criminal"></app-topic-list>
-    <app-topic-list title="Romance"></app-topic-list>
-  </div>
+
+  <app-footer></app-footer>
 </div>

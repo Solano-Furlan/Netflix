@@ -7,6 +7,11 @@ import { SearchPage } from './modules/app/pages/search/search.page';
 
 const routes: Routes = [
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
     path: '',
     component: HomePage,
   },
@@ -17,10 +22,6 @@ const routes: Routes = [
   {
     path: 'search/:term',
     component: SearchPage,
-  },
-  {
-    path: 'videos-config',
-    component: VideosConfigPage,
   },
 ];
 
