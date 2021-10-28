@@ -13,21 +13,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomePage,
-  },
-  {
-    path: 'player/:id',
-    component: PlayerPage,
-  },
-  {
-    path: 'search/:term',
-    component: SearchPage,
+    loadChildren: () =>
+      import('./modules/app/main-app.module').then((m) => m.MainAppModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
   ],
   exports: [RouterModule],
 })
